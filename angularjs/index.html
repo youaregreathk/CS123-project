@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<!-- define angular app -->
+<html ng-app="scotchApp">
+
+<head>
+   <link href="bootstrap.css" rel="stylesheet" />
+   <link href="bootstrap-theme.css" rel="stylesheet" />
+  
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+
+  <!--AngularJS-->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+  
+  <!--HighChartJS Library-->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  
+  <!--Chart JS Library-->
+  <script src="Chart.min.js"></script>
+  <script src="angular-chart.min.js"></script>
+
+  <!--Angular Routing-->
+  <script src="script.js"></script>
+</head>
+
+<!-- define angular controller -->
+<body ng-controller="mainController">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">STB Data</a>
+    </div>
+    <ul class="nav navbar-nav">
+  
+      <!--<li><a href="#">Panel</a></li>-->
+      
+      <li><a href="#chart">Graphs</a></li> 
+      <li><a href="#modules">Modules</a></li> 
+      
+    </ul>
+  </div>
+</nav>
+
+
+  <div id="main">
+  
+    <!-- angular templating -->
+		<!-- this is where content will be injected -->
+    <div ng-view></div>
+    
+  </div>
+  
+  <footer class="text-center">
+  </footer>
+  
+</body>
+
+</html>

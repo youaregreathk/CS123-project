@@ -1,0 +1,60 @@
+
+<div  class="panel-body">
+  <h1>Mockingbird Test Runs</h1>
+            <table class="table table-striped table-bordered table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <!--<td>#</td>-->
+                       
+                        <td><a href="" ng-click="orderByField='startTime'; reverseSort = !reverseSort">StartTime</td>
+                        <td><a href="" ng-click="orderByField='flavorId'; reverseSort = !reverseSort">Flavor ID</td>
+                        <td><a href="" ng-click="orderByField='uiVersion'; reverseSort = !reverseSort">UI Version</td>
+                        <!--<td>EndTime</td>-->
+                        <td><a href="" ng-click="orderByField='duration'; reverseSort = !reverseSort">Duration (min)</td>
+                        <td>Passing Rate</td>
+                        <td><a href="" ng-click="orderByField='npass'; reverseSort = !reverseSort">Pass</td>
+                        
+                        <td><a href="" ng-click="orderByField='nfail'; reverseSort = !reverseSort">Fail</td>
+                        <td><a href="" ng-click="orderByField='nerror'; reverseSort = !reverseSort">Errors</td>
+                        <td><a href="" ng-click="orderByField='totalTest'; reverseSort = !reverseSort">Total Test Cases</td>
+                        <td>ID</td>
+                        <!--<td><a href="" ng-click="orderByField='panelId'; reverseSort = !reverseSort">PanelId</td>-->
+                        
+                        
+                        <!--<td class="text-right">Price</td>-->
+                    </tr>
+                </thead>
+                <tbody
+                        ng-repeat="item in result|orderBy:orderByField:reverseSort"
+                        
+                        ng-controller="RowCtrl" 
+                        ng-switch on="isSelected()">
+
+                    <tr>
+                        <!--<td>{{$index+1}}</td>-->
+                         <td><a ng-href="/#/panel/{{item.panelId}}" >{{item.startTime}}</td>
+                        <td>{{item.flavorId}}</td>
+                        <td>{{item.uiVersion}}</td>
+                        <!--<td>{{item.endTime}}</td>-->
+                        <td>{{item.duration+"min"}}</td>
+                        <td>{{(item.npass/item.totalTest).toPrecision(3)*100+"%"}}</td>
+                        <td>{{item.npass}}</td>
+                        <td>{{item.nfail}}</td>
+                        <td>{{item.nerror}}</td>
+                        <td>{{item.totalTest}}</td>
+                        <td>{{item._id}}</td>
+                        <!--<td>{{item.panelId}}</td>-->
+                       
+                    
+                        
+                    </tr>
+                    <tr ng-switch-when="true">
+                    <!--
+                        <td ng-repeat="prop in  item.tests"> 
+                           {{prop}} </td>
+                           -->
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>

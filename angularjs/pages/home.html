@@ -1,0 +1,43 @@
+<!--
+<table align="center">
+    <tr>
+        <th>Modul</th>
+        <th>Title</th>
+        <th>Test</th>
+    </tr>
+    <tr ng-repeat="item in result">
+        <td>{{item.modId}}</td>
+        <td>{{item.title}}</td>
+        <td>{{item._id}}</td>
+    </tr>
+  </tbody>
+</table>
+-->
+<div class="panel-body">
+            <h1 align="center">Module</h1>
+            <table class="table table-striped table-bordered table-condensed ">
+                <thead>
+                    <tr>
+                        <td>#</td>
+                        <td>Module Title</td>
+                        <td>ModId</td>
+                        <td>Tests</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in result">
+                        <td>{{$index+1}}</td>
+                        <td>{{item.title}}</td>
+                        <td>{{item.modId}}</td>
+                        <td ng-repeat="prop in  item.testname" >
+                            <!--<a ng-href="api/tests/{{prop}}" ng-click="setTest({{prop}})">
+                                        {{prop}}</a></td>
+                            -->
+                            
+                            <a ng-href="/#/test/{{prop}}" >
+                                        {{prop}}</a></td>
+                            
+                    </tr>
+                </tbody>
+            </table>
+        </div>

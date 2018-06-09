@@ -1,0 +1,36 @@
+<div class="panel-body">
+            
+            <h1 align="center">Test Result</h1>
+            <!--<table class="table table-striped table-bordered table-condensed ">-->
+            <table class="table table-striped table-condensed ">
+                <thead>
+                    <tr>
+                        <td>Test Title</td>
+                        <td>Test Id</td>
+                        <td>Test Description</td>
+                        <td>Module name</td>
+                        <td>npass</td>
+                        <td>nfail</td>
+                        <td>nerror</td>
+                </thead>       
+             <tbody>
+					<tr>
+					    <td>{{result.title}}</td>
+					    <td>{{result._id}}</td>
+                        <td>{{result.description}}</td>
+                        <td>{{result.moduleName}}</td>
+                        <td>{{result.npass}}</td>
+                        <td>{{result.nfail}}</td>
+                        <td>{{result.nerror}}</td>            	
+                    </tr>    
+
+             </tbody>
+
+
+            </table>
+            
+            <canvas id="pie" class="chart chart-pie"
+  				chart-data="data" chart-labels="labels" chart-options="options" width: "1875" height: 937">
+			</canvas> 
+
+</div>

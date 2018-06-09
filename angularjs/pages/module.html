@@ -1,0 +1,27 @@
+
+<div class="panel-body">
+<h1>Modules</h1>
+    <div class="table-responsive">
+            <table class="table table-hover table-condensed">
+                <thead>
+                    <tr>
+                        <td>#</td>
+                        <td>Module Title</td>
+                        <td>ModId</td>
+                        <td>Tests</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in result">
+                        <td>{{$index+1}}</td>
+                        <td>{{item.title}}</td>
+                        <td>{{item.modId}}</td>
+                        <td ng-repeat="prop in  item.testname" >
+                           <a ng-href="/#/test/{{prop}}" style="color: #7F7F7F">
+                                        {{prop}}</a></td>
+                            
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>

@@ -1,0 +1,76 @@
+<div  class="panel-body">
+			<h1>Test Details</h1>
+            <table class="table table-striped table-bordered table-condensed table-hover">
+                <thead>
+                    <tr>
+                        
+                        <td>StartTime</td>
+                        <!--<td>EndTime</td>-->
+                        <td>Flavor Id</td>
+                        <td>UI Verison</td>
+                        <td>Duration</td>
+                        <td>Passing Rate</td>
+                        <td>Pass</td>
+                        <td>Fail</td>
+                        <td>Error</td>
+                        <td>Total Tests</td>
+                        <!--<td>PanelId</td>-->
+                        
+                        <td>ID</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        
+                        <td>{{panelResult.startTime}}</td>
+                        <td>{{panelResult.flavorId}}</td>
+                        <td>{{panelResult.uiVersion}}</td>
+                        <!--<td>{{panelResult.endTime}}</td>-->
+                        <td>{{panelResult.duration+"min"}}</td>
+                        <td>{{(panelResult.npass/panelResult.totalTest).toPrecision(3)*100+"%"}}</td>
+                        <td>{{panelResult.npass}}</td>
+                        <td>{{panelResult.nfail}}</td>
+                        <td>{{panelResult.nerror}}</td>
+                        <td>{{panelResult.totalTest}}</td>
+                        <!--<td>{{panelResult.panelId}}</td>-->
+                        
+                        <td>{{panelResult._id}}</td>
+                            
+                    </tr>
+                </tbody>
+                </table>
+            <h1>All Tests</h1>    
+            <table class="table table-striped table-bordered table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <td>#</td>
+                        <td><a href="" ng-click="orderByField='title'; reverseSort = !reverseSort">Test Title</td>
+                         <td><a href="" ng-click="orderByField='moduleName'; reverseSort = !reverseSort">Module</td>
+                        <td>Result Id</td>
+                        <td>Panel Id</td>
+                        <td>Duration (s)</td>
+                        <td><a href="" ng-click="orderByField='timeStamp'; reverseSort = !reverseSort">TimeStamp</td>
+                        <td> <a href="" ng-click="orderByField='status'; reverseSort = !reverseSort">Status</td>
+                        <td>Log File</td>
+                        
+                    </tr>
+                </thead>
+                    <tbody>
+                    
+                    <tr ng-repeat="item in finalobj|orderBy:orderByField:reverseSort">
+                        <td>{{$index+1}}</td>
+                        <td> <a ng-href="/#/test/{{item.title}}" >{{item.title}}</td>
+                        <td>{{item.moduleName}}</td>
+                        <td>{{item._id}}</td>
+                        <td>{{item.panelId}}</td>
+                        <td>{{item.duration}}</td>
+                        <td>{{item.timeStamp}}</td>
+                        <td>{{item.status}}</td>
+                        <td><a ng-href="{{item.logFile}}" >{{item.logFile}}</td>
+                        
+                            
+                    </tr>
+                </tbody>
+            </table>
+		
+        </div>

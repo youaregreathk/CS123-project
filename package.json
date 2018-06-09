@@ -1,0 +1,30 @@
+{
+  "name": "stbtesterservice",
+  "version": "1.0.0",
+  "description": "backend service to store test results",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular-chart.js": "^1.0.1",
+    "async-es": "^2.0.1",
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^2.2.0",
+    "gulp-nodemon": "^2.0.6",
+    "hapi": "^11.1.2",
+    "mongo-express": "^0.30.59",
+    "mongoose": "^4.4.14",
+    "notifier": "^0.1.7",
+    "should": "^8.3.1",
+    "sinon": "^1.17.4"
+  },
+  "devDependencies": {
+    "gulp-node-inspector": "^0.1.0",
+    "gulp-nodemon": "^2.1.0"
+  }
+}
